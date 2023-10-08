@@ -5,6 +5,8 @@ metadata:
 metadata:
   name: test-configmap
   namespace: argo-test
+  labels:
+    hello: world
 data:
   # Configuration values can be set as key-value properties
   database: mongodb
