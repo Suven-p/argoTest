@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: test-configmap
-  namespace: argoTest
+  namespace: argo-test
 data:
   # Configuration values can be set as key-value properties
   database: mongodb
