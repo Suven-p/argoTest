@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: test-configmap
   namespace: argo-test
+metadata:
+  name: second-test-configmap
 data:
   # Configuration values can be set as key-value properties
   database: mongodb
