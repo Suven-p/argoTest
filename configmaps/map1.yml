@@ -6,7 +6,7 @@ metadata:
   labels:
     hello: world
 metadata:
-  name: second-test-configmap2
+  name: second-test-configmap
 data:
   # Configuration values can be set as key-value properties
   database: mongodb
