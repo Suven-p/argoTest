@@ -22,12 +22,6 @@ spec:
         - image: prom/prometheus
           imagePullPolicy: Always
           name: prometheus
-          ports:
-            - containerPort: 9090
-              name: prometheus
-              protocol: TCP
-              _listeningPort: 30001
-              _serviceType: NodePort
           readinessProbe:
             failureThreshold: 3
             httpGet:
