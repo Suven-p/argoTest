@@ -34,5 +34,7 @@ data:
         static_configs:
           - targets: ["localhost:9090"]
       - job_name: "worker_node"
+        scrape_interval: 3s
+        evaluation_interval: 3s
         static_configs:
           - targets: ["worker1.suven.com.np:9100"]
