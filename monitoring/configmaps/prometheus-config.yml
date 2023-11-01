@@ -25,7 +25,6 @@ data:
       # - "second_rules.yml"
 
     # A scrape configuration containing exactly one endpoint to scrape
-    # Here it is Prometheus itself
 
     scrape_configs:
       # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
