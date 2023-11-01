@@ -4,7 +4,7 @@ metadata:
   name: prometheus-config
   namespace: monitoring
 data:
-  prometheus.yml: >
+  prometheus.yml: |
     global:
       scrape_interval: 5s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
       evaluation_interval: 5s # Evaluate rules every 15 seconds. The default is every 1 minute.
