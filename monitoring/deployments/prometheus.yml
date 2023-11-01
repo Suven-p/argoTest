@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  labels:
+    app: prometheus
+    type: deployment
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: prometheus
+      type: pod
+  template:
+    metadata:
+      labels:
+        app: prometheus
+        type: pod
+      namespace: monitoring
+    spec:
+      containers:
+        - image: prom/prometheus
+          imagePullPolicy: Always
+          name: prometheus
+          ports:
+            - containerPort: 9090
+              name: prometheus
+              protocol: TCP
+              _listeningPort: 30001
+              _serviceType: NodePort
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /metrics
+              port: 9090
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          volumeMounts:
+            - mountPath: /etc/prometheus/prometheus.yml
+              name: vol-prometheus
+              subPath: prometheus.yml
+      restartPolicy: Always
+      volumes:
+        - configMap:
+            defaultMode: 420
+            name: prometheus-config
+          name: vol-prometheus
+  replicas: 1
