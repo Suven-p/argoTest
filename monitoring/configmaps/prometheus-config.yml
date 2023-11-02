@@ -36,4 +36,4 @@ data:
       - job_name: "worker_node"
         scrape_interval: 5s
         static_configs:
-          - targets: ["worker1.suven.com.np:9100"]
+          - targets: ["master1.suven.com.np:9100", "worker1.suven.com.np:9100"]
